@@ -118,6 +118,6 @@ Once downloaded create a folder called `combined-real-and-fake-faces/combined-re
 
 ## Authors
 
-- [@SubhangiSati]([https://www.github.com/purvikajoshi01](https://github.com/SubhangiSati))
+- [@SubhangiSati](https://github.com/SubhangiSati))
 - [@AyanSar](https://github.com/Ayan-Sar)
 
