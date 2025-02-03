@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&display=swap');
+  </style> 
+  </head>
+  <body>
+    <video autoplay loop muted id="background-video">
+      <source src="static\css\assets\Back.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>    
+      <div class="solutions">
+        <h2>What do you want to detect?</h2>
+        <div class="flex-container">
+        <div class="solution-item card-item">
+          <img class='image-item center' id="image-img" src="{{ url_for('static', filename='/untitled_design_-_2023-11-09t103355-sixteen_nine.jpg') }}" alt="Image detection">
+          <h3 style="text-align: left;">Image detection</h3>
+          <p style="text-align: left;">Detect whether an image has been altered by Al</p>
+          <a href="./image">
+          <button class="detect-button" type="button">Start Detecting</button>
+          </a>
+          
+        </div>
+        <div class="solution-item card-item">
+          <img class='image-item center' id="image-audio" src="{{ url_for('static', filename='/7dc12ee0-e5b0-11ec-b977-a345e4c04815.jpg') }}" alt="Audio detection">
+          <h3 style="text-align: left;">Audio detection</h3>
+          <p style="text-align: left;">Analyze audio to determine if it has been altered by Al</p>
+          <a href="./audio">
+          <button class="detect-button" type="button">Start Detecting</button>
+        </a>
+        </div>
+        <div class="solution-item card-item">
+          <img class='image-item center' id="image-video" src="{{ url_for('static', filename='/How-DeepFake-Videos-Are-Made-Methods-Cost-Duration-s.jpg') }}" alt="Video detection">
+          <h3 style="text-align: left;">Video detection</h3>
+          <p style="text-align: left;">Analyze video to determine if it has been altered by Al</p>
+          <a href="./video">
+          <button class="detect-button " type="button">Start Detecting</button>
+          </a>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

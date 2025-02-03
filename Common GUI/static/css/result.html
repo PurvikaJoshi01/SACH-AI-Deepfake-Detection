@@ -1,0 +1,72 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}" />
+    <title>Deepfake Detection Result</title>
+    <style>
+      
+        @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&display=swap');
+  
+     
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #333333;
+        transition: opacity 0.75s, visibility 0.75s;
+      }
+      
+      .loader--hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .loader::after {
+        content: "";
+        width: 75px;
+        height: 75px;
+        border: 15px solid #dddddd;
+        border-top-color: #009578;
+        border-radius: 50%;
+        animation: loading 0.75s ease infinite;
+      }
+      
+      @keyframes loading {
+        from {
+          transform: rotate(0turn);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
+
+    </script>
+</head>
+<body>
+    <div class="loader"></div>
+    <h2 class="center-view">Deepfake Detection Result</h2>
+    <p class="center-view down-big" id="result-id">{{ result }}</p>
+    <p class="center-view"><a href="/"><button class="button-submit" type="button">Go back to home</button></a></p>
+</body>
+</html>

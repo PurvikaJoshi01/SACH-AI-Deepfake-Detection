@@ -1,0 +1,139 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items:normal;
+    min-height: 100vh;
+    background: url('D:\\HackMol 5.O\\Common GUI\\templates\\Background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sach-ai {
+    font-family: "Anta", sans-serif; /* Primary font */
+    font-family: "Kode Mono", monospace; /* Fallback font */
+    font-size: 100px; 
+    margin-bottom: 0px;
+    color: white;
+  }
+
+/* Circuit Animation */
+@keyframes circuit-animation {
+    0% {
+        color: #b058b9;
+        text-shadow: none;
+    }
+    50% {
+        color: #00FF00;
+        text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+    }
+    100% {
+        color: #000;
+        text-shadow: none;
+    }
+}
+
+/* DNA Strands Animation */
+@keyframes dna-animation {
+    0% {
+        font-family: "Courier New", monospace;
+        letter-spacing: 5px;
+    }
+    50% {
+        font-family: "Comic Sans MS", cursive;
+        letter-spacing: -10px;
+    }
+    100% {
+        font-family: "Courier New", monospace;
+        letter-spacing: 5px;
+    }
+}
+
+/* Eye Scan Animation */
+@keyframes eye-scan-animation {
+    0% {
+        text-shadow: 0 0 0px #f8aaf9;
+    }
+    100% {
+        text-shadow: 0 0 20px #f8aaf9, 0 0 40px #c00af3;
+    }
+}
+
+
+#sach-ai {
+    animation: dna-animation 10s ease-in-out infinite;
+}
+
+/* Or: */
+#sach-ai {
+    animation: eye-scan-animation 2s ease-in-out infinite;
+}
+
+
+/* Typing Animation */
+@keyframes typing-animation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+p {
+    font-family: "Anta", sans-serif;
+    font-family: "Kode Mono", monospace;
+    font-size: 30px;
+    margin-bottom: 60px;
+    color:whitesmoke;
+    overflow: hidden; /* Ensure the text doesn't overflow during animation */
+    white-space: nowrap; /* Prevent line breaks */
+    border-right:20 px solid transparent; /* Add a border for the cursor effect */
+    animation: typing-animation 2s steps(40, end); /* Adjust duration as needed */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    font-family: "Kanit", sans-serif;
+    text-align: center; /* Centering text */
+    color: #dbbdea;
+    font-weight: 200;
+    font-size: 22px;
+    line-height:1.2; /* Adjusted line height */
+    margin-bottom: 60px;
+}
+button {
+    background-color: rgb(231, 127, 247);
+    color: #340f46;
+    padding: 15px 30px;
+    border: 100;
+    border-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Kanit", sans-serif;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+
