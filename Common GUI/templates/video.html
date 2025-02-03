@@ -1,0 +1,55 @@
+<!-- templates/video_detection.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/video.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Anta&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&display=swap');
+  </style> 
+    <title>Video Deepfake Detection</title>
+</head>
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="static\css\assets\BackV.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video> 
+    <h2 class="center-view">Video Deepfake Detection</h2>
+    <br/>
+    <p>Upload any video <strong>file</strong> to analyzing if it is deepfake or not. This process might take some time</p>
+    <form action="/upload-video" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="option" value="video">
+        
+        <input type="file" id="file" name="file" accept="video/*" style="display: none;">
+        <br/>
+        <div class="right-view">
+            <label class="button-file" for="file"><i class="fa fa-folder"></i> Upload video file</label>
+        </div>
+
+        <p class="center-view"><video id="imgcon" width="320" height="240" controls>
+            <source id="image" src="">
+        </video></form></p>
+
+
+        <p>File format: .mp4, .mov, or any valid video format. Maximum size of 100MB.</p>
+        <p class="center-view"><input class="button-submit" type="submit" value="Detect Deepfake"></p>
+    </form>
+    <script>
+        let cont =document.getElementById('imgcon');
+        let  video =document.getElementById('image');
+        let input = document.getElementById('file');
+        console.log(video)
+        input.onchange = function(){
+            
+            
+            video.src = URL.createObjectURL(input.files[0]);
+            cont.load()
+        }
+
+    </script>
+</body>
+</html>
